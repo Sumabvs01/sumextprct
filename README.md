@@ -1,4 +1,5 @@
 # sumextprct
+lab.
 
 
 
@@ -27,9 +28,7 @@
 
 
 
-
-
-
+5.
 * Explain the Functional and Non-Functional requirements of Online Course Reservation system.
 * Construct a Class diagram for Online Course Reservation System.
 * Illustrate the scaling of a container named mysql through Kubernetes.
@@ -118,6 +117,61 @@ REQUIREMENTS:
    - Shows structure of system
    - Helps in object-oriented design
 
+@startuml
+
+class Student {
+  -String studentId
+  -String name
+  -String email
+  +reserveCourse()
+  +cancelReservation()
+  +viewReservations()
+}
+
+class Course {
+  -String courseId
+  -String title
+  -String description
+  -int credits
+  +getOfferings()
+}
+
+class CourseOffering {
+  -String offeringId
+  -Date startDate
+  -Date endDate
+  -int capacity
+  -int enrolled
+  -String instructor
+  +isAvailable()
+  +enroll()
+  +unenroll()
+}
+
+class Reservation {
+  -String reservationId
+  -Date reservationDate
+  -String status
+  +confirm()
+  +cancel()
+}
+
+class Payment {
+  -String paymentId
+  -Decimal amount
+  -Date paymentDate
+  -String status
+  +process()
+  +refund()
+}
+
+' Relationships based on your diagram
+Student "1" --> "0..*" Reservation
+Course "1" --> "0..*" CourseOffering
+CourseOffering "1" --> "1" Reservation
+Reservation "1" --> "0..1" Payment
+
+@enduml
 
 
 ￼
