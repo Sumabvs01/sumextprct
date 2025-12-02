@@ -26,6 +26,10 @@
 
 
 
+
+
+
+
 * Explain the Functional and Non-Functional requirements of Online Course Reservation system.
 * Construct a Class diagram for Online Course Reservation System.
 * Illustrate the scaling of a container named mysql through Kubernetes.
